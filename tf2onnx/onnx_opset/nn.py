@@ -26,8 +26,10 @@ logger = logging.getLogger(__name__)
 
 def spatial_map(shape, perm):
     new_shape = shape[:]
-    for i in perm:
-        new_shape[i] = shape[perm[i]]
+    # spatial map shape must be 4D.
+    if len(shape) == len(perm) :
+        for i in perm:
+            new_shape[i] = shape[perm[i]]
     return new_shape
 
 
